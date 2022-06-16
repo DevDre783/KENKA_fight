@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samurai_FIGHT</title>
+    <title>KENKA</title>
     <style>
         * {
             box-sizing: border-box;
@@ -18,8 +18,8 @@
         <div style="position: absolute; display: flex; width: 100%; align-items: center; padding: 20px;">
 
             <!-- player health bar -->
-            <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content: flex-end;">
-                <div style="background-color: yellow; height: 30px; width: 100%;"></div>
+            <div style="position: relative; height: 50px; width: 100%; display: flex; justify-content: flex-end;">
+                <div style="background-color: yellow; height: 50px; width: 100%;"></div>
                 <div
                     id="playerHealth"
                     style="position: absolute;
@@ -43,12 +43,11 @@
                 justify-content: center;
                 font-size: 50px;"
             >
-                10
             </div>
 
             <!-- enemy health bar -->
-            <div style="position: relative; height: 30px; width: 100%;">
-                <div style="background-color: yellow; height: 30px;"></div>
+            <div style="position: relative; height: 50px; width: 100%;">
+                <div style="background-color: yellow; height: 50px;"></div>
                 <div
                     id="enemyHealth"
                     style="position: absolute;
@@ -63,7 +62,7 @@
         </div>
         <div id="displayText" style="
         position: absolute;
-        color: white;
+        color: black;
         align-items: center;
         justify-content: center;
         font-size: 50px;
@@ -73,11 +72,12 @@
         right: 0;
         display: none;"
         >
-            Tie!
         </div>
         <canvas></canvas>
     </div>
 
+    <script src="js/classes.js"></script>
+    <script src="js/utils.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
