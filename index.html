@@ -5,11 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samurai_FIGHT</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-    <canvas>
+    <!-- red container div -->
+    <div style="position: relative; display: inline-block;">
+        <!-- smaller red container div -->
+        <div style="position: absolute; display: flex; width: 100%; align-items: center; padding: 20px;">
 
-    </canvas>
+            <!-- player health bar -->
+            <div style="position: relative; height: 30px; width: 100%; display: flex; justify-content: flex-end;">
+                <div style="background-color: yellow; height: 30px; width: 100%;"></div>
+                <div
+                    id="playerHealth"
+                    style="position: absolute;
+                    background: blue;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;"
+                ></div>
+            </div>
+
+            <!-- fight timer -->
+            <div
+                id="timer"
+                style="background-color: red;
+                width: 125px;
+                height: 115px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 50px;"
+            >
+                10
+            </div>
+
+            <!-- enemy health bar -->
+            <div style="position: relative; height: 30px; width: 100%;">
+                <div style="background-color: yellow; height: 30px;"></div>
+                <div
+                    id="enemyHealth"
+                    style="position: absolute;
+                    background: blue;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;"
+                ></div>
+            </div>
+            <div></div>
+        </div>
+        <div style="position: absolute;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;"
+        >
+            Tie!
+        </div>
+        <canvas></canvas>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>

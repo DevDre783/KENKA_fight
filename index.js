@@ -3,7 +3,7 @@ const c = canvas.getContext('2d');
 
 // display
 canvas.width = 1750;
-canvas.height = 1100;
+canvas.height = 1000;
 
 //interaction
 c.fillRect(0, 0, canvas.width, canvas.height);
@@ -29,6 +29,7 @@ class Sprite {
         };
         this.color = color;
         this.isAttacking;
+        this.health = 100;
     }
 
     draw() {
@@ -42,7 +43,7 @@ class Sprite {
         );
 
         // attack box
-        // if (this.isAttacking) {
+        if (this.isAttacking) {
             c.fillStyle = 'green';
             c.fillRect(
                 this.attackBox.position.x,
@@ -50,7 +51,7 @@ class Sprite {
                 this.attackBox.width,
                 this.attackBox.height
             )
-        // }
+        }
     }
 
     update() {
@@ -137,6 +138,23 @@ const rectangularCollision = ({ rectangle1, rectangle2 }) => {
     )
 }
 
+// Timer
+let timer = 10;
+
+const decreaseTimer = () => {
+    if (timer > 0) {
+        setTimeout(decreaseTimer, 1000)
+        timer--;
+        document.querySelector('#timer').innerHTML = timer;
+    }
+
+    if(player.health === enemy.health) {
+        console.log('TIE !')
+    }
+}
+
+decreaseTimer();
+
 // Animation
 const animate = () => {
     window.requestAnimationFrame(animate);
@@ -165,12 +183,14 @@ const animate = () => {
     // Detect for collision
     if (rectangularCollision({ rectangle1: player, rectangle2: enemy }) && player.isAttacking) {
         player.isAttacking = false;
-        console.log("Player HITS!");
+        enemy.health -= 20;
+        document.querySelector("#enemyHealth").style.width = enemy.health + '%';
     }
 
     if (rectangularCollision({ rectangle1: enemy, rectangle2: player }) && enemy.isAttacking) {
         enemy.isAttacking = false;
-        console.log("Enemy HITS!");
+        player.health -= 20;
+        document.querySelector("#playerHealth").style.width = player.health + '%';
     }
 }
 
@@ -207,7 +227,7 @@ window.addEventListener('keydown', (e) => {
             enemy.lastKey = 'ArrowRight'
             break
         case 'ArrowDown':
-            enemy.isAttacking = true
+            enemy.attack()
             break
     }
 })
