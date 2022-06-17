@@ -1,6 +1,12 @@
 // Background
 class Sprite {
-    constructor({ position, imageSrc, scale = 1, framesMax = 1 }) {
+    constructor({
+        position,
+        imageSrc,
+        scale = 1,
+        framesMax = 1,
+        offset = {x: 0, y: 0}
+    }) {
         this.position = position;
         this.width = 50;
         this.height = 150;
@@ -11,6 +17,7 @@ class Sprite {
         this.framesCurrent = 0;
         this.framesElapsed = 0;
         this.framesHold = 6.5;
+        this.offset = offset;
     }
 
     draw() {
@@ -20,15 +27,14 @@ class Sprite {
             0,
             this.image.width / this.framesMax,
             this.image.height,
-            this.position.x,
-            this.position.y,
+            this.position.x - this.offset.x,
+            this.position.y - this.offset.y,
             (this.image.width / this.framesMax) * this.scale,
             this.image.height * this.scale
         )
     }
 
-    update() {
-        this.draw();
+    animateFrames() {
         this.framesElapsed++
 
         if(this.framesElapsed % this.framesHold === 0) {
@@ -39,6 +45,11 @@ class Sprite {
             }
         }
     }
+
+    update() {
+        this.draw();
+        this.animateFrames()
+    }
 }
 
 // Player and Enemy
@@ -47,16 +58,17 @@ class Fighter extends Sprite {
         position,
         velocity,
         color= 'red',
-        offset,
         imageSrc,
         scale = 1,
-        framesMax = 1
+        framesMax = 1,
+        offset = {x: 0, y: 0}
     }) {
         super({
             position,
             imageSrc,
             scale,
             framesMax,
+            offset
         })
 
         this.velocity = velocity;
@@ -77,33 +89,14 @@ class Fighter extends Sprite {
         this.health = 100;
         this.framesCurrent = 0;
         this.framesElapsed = 0;
-        this.framesHold = 6.5;
-    }
-
-    draw() {
-        // player and enemy
-        c.fillStyle = this.color;
-        c.fillRect(
-            this.position.x,
-            this.position.y,
-            this.width,
-            this.height
-        );
-
-        // attack box
-        if (this.isAttacking) {
-            c.fillStyle = 'green';
-            c.fillRect(
-                this.attackBox.position.x,
-                this.attackBox.position.y,
-                this.attackBox.width,
-                this.attackBox.height
-            )
-        }
+        this.framesHold = 4;
     }
 
     update() {
         this.draw();
+
+        this.animateFrames()
+
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x
         this.attackBox.position.y = this.position.y
 
