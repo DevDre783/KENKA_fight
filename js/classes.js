@@ -61,7 +61,8 @@ class Fighter extends Sprite {
         imageSrc,
         scale = 1,
         framesMax = 1,
-        offset = {x: 0, y: 0}
+        offset = {x: 0, y: 0},
+        sprites
     }) {
         super({
             position,
@@ -71,10 +72,10 @@ class Fighter extends Sprite {
             offset
         })
 
-        this.velocity = velocity;
-        this.width = 75;
-        this.height = 200;
-        this.lastKey;
+        this.velocity = velocity
+        this.width = 75
+        this.height = 200
+        this.lastKey
         this.attackBox = {
             position: {
                 x: this.position.x,
@@ -84,12 +85,19 @@ class Fighter extends Sprite {
             width: 100,
             height: 50,
         };
-        this.color = color;
-        this.isAttacking;
-        this.health = 100;
-        this.framesCurrent = 0;
-        this.framesElapsed = 0;
-        this.framesHold = 4;
+        this.color = color
+        this.isAttacking
+        this.health = 100
+        this.framesCurrent = 0
+        this.framesElapsed = 0
+        this.framesHold = 4
+        this.sprites = sprites
+
+        for (const sprite in this.sprites) {
+            sprites[sprite].image = new Image()
+            sprites[sprite].image.src = sprites[sprite]. imageSrc
+        }
+        console.log(sprites)
     }
 
     update() {
@@ -105,6 +113,7 @@ class Fighter extends Sprite {
 
         if (this.position.y + this.height + this.velocity.y >= canvas.height - 168.5) {
             this.velocity.y = 0;
+            this.position.y = 632;
         } else {
             this.velocity.y += gravity;
         }
@@ -112,8 +121,50 @@ class Fighter extends Sprite {
 
     attack() {
         this.isAttacking = true;
+        this.switchSprite('attack1')
         setTimeout(() => {
             this.isAttacking = false;
         }, 100)
+    }
+
+    switchSprite(sprite) {
+        if(this.image === this.sprites.attack1.image && this.framesCurrent < this.sprites.attack1.framesMax - 1) return
+        switch (sprite) {
+            case 'idle':
+                if (this.image !== this.sprites.idle.image) {
+                    this.image = this.sprites.idle.image;
+                    this.framesMax = this.sprites.idle.framesMax;
+                    this.framesCurrent = 0;
+                }
+                break
+            case 'run':
+                if (this.image !== this.sprites.run.image) {
+                    this.image = this.sprites.run.image;
+                    this.framesMax = this.sprites.run.framesMax;
+                    this.framesCurrent = 0;
+                }
+                break
+            case 'jump':
+                if (this.image !== this.sprites.jump.image) {
+                this.image = this.sprites.jump.image;
+                this.framesMax = this.sprites.jump.framesMax;
+                this.framesCurrent = 0;
+                }
+                break
+            case 'fall':
+                if (this.image !== this.sprites.fall.image) {
+                this.image = this.sprites.fall.image;
+                this.framesMax = this.sprites.fall.framesMax;
+                this.framesCurrent = 0;
+                }
+                break
+            case 'attack1':
+            if (this.image !== this.sprites.attack1.image) {
+            this.image = this.sprites.attack1.image;
+            this.framesMax = this.sprites.attack1.framesMax;
+            this.framesCurrent = 0;
+            }
+            break
+        }
     }
 }
