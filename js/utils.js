@@ -23,7 +23,7 @@ const determineWinner = ({ player, enemy, timerId }) => {
 }
 
 // Timer
-let timer = 5;
+let timer = 60;
 let timerId;
 
 const decreaseTimer = () => {

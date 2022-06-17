@@ -10,12 +10,24 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
 
+// background image
 const background = new Sprite({
     position: {
         x: 0,
         y: 0
     },
     imageSrc: './img/background.png'
+})
+
+// shop image
+const shop = new Sprite({
+    position: {
+        x: 1025,
+        y: 225
+    },
+    imageSrc: './img/shop.png',
+    scale: 4.75,
+    framesMax: 6,
 })
 
 const player = new Fighter({
@@ -30,7 +42,8 @@ const player = new Fighter({
     offset: {
         x: 25,
         y: 0
-    }
+    },
+    imageSrc: './img/samuraiMack/Idle.png'
 })
 
 const enemy = new Fighter({
@@ -79,6 +92,7 @@ const animate = () => {
     c.fillRect(0, 0, canvas.width, canvas.height);
 
     background.update();
+    shop.update();
     player.update();
     enemy.update();
 
