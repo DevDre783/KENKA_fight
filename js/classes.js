@@ -16,7 +16,7 @@ class Sprite {
         this.framesMax = framesMax;
         this.framesCurrent = 0;
         this.framesElapsed = 0;
-        this.framesHold = 6.5;
+        this.framesHold = 5;
         this.offset = offset;
     }
 
@@ -91,7 +91,7 @@ class Fighter extends Sprite {
         this.health = 100
         this.framesCurrent = 0
         this.framesElapsed = 0
-        this.framesHold = 4
+        this.framesHold = 4;
         this.sprites = sprites
 
         for (const sprite in this.sprites) {

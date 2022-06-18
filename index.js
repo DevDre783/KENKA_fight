@@ -39,10 +39,6 @@ const player = new Fighter({
       x: 0,
       y: 0
     },
-    offset: {
-        x: 0,
-        y: 0
-    },
     imageSrc: './img/samuraiMack/Idle.png',
     framesMax: 8,
     scale: 4.2,
@@ -206,7 +202,7 @@ const animate = () => {
         enemy.switchSprite('fall')
     }
 
-    // Detect for collision
+    // Detect for collision player
     if (rectangularCollision({
         rectangle1: player,
         rectangle2: enemy })
@@ -222,7 +218,7 @@ const animate = () => {
         player.isAttacking = false;
     }
 
-
+    // Detect for collision enemy
     if (rectangularCollision({
         rectangle1: enemy,
         rectangle2: player
