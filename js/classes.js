@@ -113,12 +113,12 @@ class Fighter extends Sprite {
         this.attackBox.position.y = this.position.y + this.attackBox.offset.y
 
         // Draw the attackBox making it visible
-        c.fillRect(
-            this.attackBox.position.x,
-            this.attackBox.position.y,
-            this.attackBox.width,
-            this.attackBox.height
-        )
+        // c.fillRect(
+        //     this.attackBox.position.x,
+        //     this.attackBox.position.y,
+        //     this.attackBox.width,
+        //     this.attackBox.height
+        // )
 
         // players will not leave canvas
         if (this.position.x <= 0) {
