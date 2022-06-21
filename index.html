@@ -13,7 +13,7 @@
             padding: 0;
         }
         body {
-            background-image: url('https://thumbs.dreamstime.com/b/background-scene-dark-sky-japanese-temple-illustration-184088902.jpg');
+            background-image: url('https://i.pinimg.com/originals/55/4e/76/554e7627abd0f651255f66998db91c35.png');
             background-repeat: no-repeat;
             background-size: cover;
             display: grid;
@@ -21,10 +21,17 @@
             height: 100vh;
         }
         h1 {
+            position: relative;
             display: grid;
             place-content: center;
             font-size: 5rem;
             font-family: 'Press Start 2P', cursive;
+            bottom: 15px;
+            /* text-decoration: underline; */
+        }
+        .title_japanese {
+            color: white;
+            font-size: 32pt;
         }
     </style>
 
@@ -33,7 +40,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>KENKA</h1>
+    <!-- Game Title -->
+    <div>
+        <h1>KENKA</h1><h1 class="title_japanese">喧嘩</h1>
+    </div>
     <!-- red container div -->
     <div style="position: relative; display: inline-block; justify-content: center;">
         <!-- smaller red container div -->
