@@ -5,6 +5,8 @@ const c = canvas.getContext('2d');
 canvas.width = 1750;
 canvas.height = 1000;
 
+
+
 //interaction
 c.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -179,8 +181,10 @@ const animate = () => {
     // draw objects
     background.update();
     shop.update();
+    // background opacity
     c.fillStyle = 'rgba(255, 255, 255, 0.11)'
     c.fillRect(0, 0, canvas.width, canvas.height);
+    // instantiate player and enemy
     player.update();
     enemy.update();
 
@@ -197,7 +201,6 @@ const animate = () => {
     } else {
         player.switchSprite('idle');
     }
-
     if (player.velocity.y < 0) {
         player.switchSprite('jump');
     } else if (player.velocity.y > 0) {
@@ -214,7 +217,6 @@ const animate = () => {
     } else {
         enemy.switchSprite('idle');
     }
-
     if (enemy.velocity.y < 0) {
         enemy.switchSprite('jump');
     } else if (enemy.velocity.y > 0) {
@@ -228,7 +230,6 @@ const animate = () => {
         && player.isAttacking && player.framesCurrent === 4
     ) {
         enemy.takeHit();
-        // enemy.health -= 15;
         player.isAttacking = false;
         gsap.to('#enemyHealth', {
             width: enemy.health + '%'
@@ -247,7 +248,6 @@ const animate = () => {
     }) && enemy.isAttacking && enemy.framesCurrent === 2
     ) {
         player.takeHit();
-        // player.health -= 10;
         enemy.isAttacking = false;
         gsap.to('#playerHealth', {
             width: player.health + '%'
@@ -269,6 +269,8 @@ animate();
 
 window.addEventListener('keydown', (e) => {
     if (!player.dead) {
+        // if(player.position.x <= 0) player.position.x = 0;
+        // if (player.position.x + player.width >= canvas.width) player.position.x = canvas.width - player.width + 10;
         switch (e.key) {
         //Player movement
             case 'w':
@@ -289,6 +291,8 @@ window.addEventListener('keydown', (e) => {
     }
 
     if (!enemy.dead) {
+        if(enemy.position.x <= 0) enemy.position.x = 0;
+        if (enemy.position.x + enemy.width >= canvas.width) enemy.position.x = canvas.width - enemy.width;
         switch (e.key) {
             // Enemy movement
             case 'ArrowUp':
