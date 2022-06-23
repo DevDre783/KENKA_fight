@@ -15,13 +15,10 @@ const determineWinner = ({ player, enemy, timerId }) => {
 
     if(player.health === enemy.health) {
         document.querySelector('#displayText').innerHTML = 'Tie!';
-        // if (document.querySelector('#displayText').innerHTML === 'Tie!') {
-        //     player.
-        // }
     } else if (player.health > enemy.health) {
         document.querySelector('#displayText').innerHTML = 'Player Wins!';
     } else if (enemy.health > player.health) {
-        document.querySelector('#displayText').innerHTML = 'Enemy Wins!';
+        document.querySelector('#displayText').innerHTML = 'Player 2 Wins!';
     }
 }
 
