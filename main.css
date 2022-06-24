@@ -1,3 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* position: relative; */
+    background-image: url('https://i.pinimg.com/originals/55/4e/76/554e7627abd0f651255f66998db91c35.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    position: relative;
+    display: grid;
+    place-content: center;
+    font-size: 5rem;
+    font-family: 'Press Start 2P', cursive;
+    bottom: 15px;
+    /* text-decoration: underline; */
+}
+
+.title_japanese {
+    /* position: absolute; */
+    color: white;
+    font-size: 32pt;
+    margin-bottom: 10px;
+}
+
 .footer__container {
     border-top: 1px solid rgba(82, 82, 82, 0.5);
     box-shadow: 2px 5px 5px 5px rgba(36, 36, 36, 0.5);
@@ -92,12 +126,29 @@
     }
 
     .game_view {
-        transform: scale(0.8);
+        transform: scale(0.85);
         margin-bottom: 2%;
     }
 
+    h1 {
+        position: relative;
+        display: grid;
+        place-content: center;
+        font-size: 5rem;
+        font-family: 'Press Start 2P', cursive;
+        bottom: 15px;
+        /* text-decoration: underline; */
+    }
+
     .title_japanese {
-        margin-bottom: -15px;
+        /* position: absolute; */
+        color: white;
+        font-size: 32pt;
+        margin-bottom: 10px;
+    }
+
+    .title_japanese {
+        margin-bottom: -25px;
     }
 
     h1 {
