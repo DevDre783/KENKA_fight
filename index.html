@@ -22,6 +22,7 @@
             display: grid;
             place-content: center;
             height: 100vh;
+            width: 100vw;
         }
         h1 {
             position: relative;
@@ -81,7 +82,7 @@
         <h1>KENKA</h1><h1 class="title_japanese">喧嘩</h1>
     </div>
     <!-- red container div -->
-    <div style="position: relative; display: inline-block; justify-content: center;">
+    <div class="game_view" style="position: relative; display: inline-block; justify-content: center;">
         <!-- smaller red container div -->
         <div style="
             position: absolute;
@@ -92,7 +93,6 @@
             margin-top: 45px;
             transform: scale(0.93);"
         >
-
             <!-- player health bar -->
             <div style="
                 position: relative;
