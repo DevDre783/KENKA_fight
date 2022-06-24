@@ -60,19 +60,21 @@
 	-moz-border-radius: 7px;
 	-o-border-radius: 7px;
 	border-radius: 7px;
-    box-shadow: 0 .5em gray;
     cursor: pointer;
     font-family: 'Press Start 2p';
     /* z-index: 99; */
+    transition: 0.3s ease-in-out;
     position: absolute;
     margin-left: 46.5vw;
     margin-top: 60vh;
+    box-shadow: 0 .5em gray;
 }
 
-.rematch_btn:active {
-	box-shadow: none;
+.rematch_btn:hover {
+	box-shadow: 0 .2em gray;
+    transition: 0.3s ease-in-out;
 	position: absolute;
-	/* top: .2em; */
+    transform: translateY(4px);
 }
 
 @media only screen and (max-width: 2000px) {

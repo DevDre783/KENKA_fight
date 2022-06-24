@@ -1,3 +1,8 @@
+// Restart the Game
+function reloadGame() {
+    reloadGame = location.reload();
+}
+
 const rematchFunc = () => {
 
     let rematchBtn = document.createElement("span");
@@ -7,9 +12,10 @@ const rematchFunc = () => {
 
     footer.append(rematchBtn);
 
-    console.log("HELLO")
     rematchBtn.addEventListener("click", () => {
-        reload()
+        setTimeout(() => {
+            reloadGame()
+        }, 100)
     })
 }
 
@@ -42,14 +48,10 @@ const determineWinner = ({ player, enemy, timerId }) => {
     setTimeout(() => {
         player.dead = true;
         enemy.dead = true;
-    }, 100)
+    }, 150)
 }
 
 // Timer
-
-function reload() {
-    reload = location.reload();
-}
 
 const decreaseTimer = () => {
     if (timer > 0) {
