@@ -63,7 +63,7 @@ class Fighter extends Sprite {
         framesMax = 1,
         offset = {x: 0, y: 0},
         sprites,
-        attackBox = { offset: {} , width: undefined, height: undefined }
+        attackBox = { offset: {} , width: undefined, height: undefined, }
     }) {
         super({
             position,
@@ -105,7 +105,7 @@ class Fighter extends Sprite {
     update() {
         this.draw();
 
-        console.log(this.position.x);
+        // console.log(this.position.x);
 
         if (!this.dead) this.animateFrames();
 
@@ -142,8 +142,8 @@ class Fighter extends Sprite {
     }
 
     attack() {
-        this.isAttacking = true;
-        this.switchSprite('attack1');
+            this.isAttacking = true;
+            this.switchSprite('attack1');
     }
 
     takeHit() {

@@ -1,0 +1,91 @@
+.footer__container {
+    border-top: 1px solid rgba(82, 82, 82, 0.5);
+    box-shadow: 2px 5px 5px 5px rgba(36, 36, 36, 0.5);
+    height: 6%;
+    color: white;
+    background-color: rgba(109, 109, 109, 0.493);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    z-index: 1;
+}
+
+.footer__content {
+    margin-top: 2.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__content a {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.github__icon {
+    margin-right: 40%;
+    color: rgb(228, 228, 228);
+    text-decoration: none;
+    transform: scale(2.5);
+}
+
+.github__icon:hover {
+    color: white;
+}
+
+.linkedIn__icon {
+    color: rgb(228, 228, 228);
+    text-decoration: none;
+    transform: scale(2.5);
+}
+
+.linkedIn__icon:hover {
+    color: white;
+}
+
+/* REMATCH BUTTON */
+
+.rematch_btn {
+    /* text-align: center; */
+	display: inline-block;
+	/* margin: 5px; */
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 10px 28px 10px 25px ;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: red;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .5em gray;
+    cursor: pointer;
+    font-family: 'Press Start 2p';
+    /* z-index: 99; */
+    position: absolute;
+    margin-left: 46.5vw;
+    margin-top: 60vh;
+}
+
+.rematch_btn:active {
+	box-shadow: none;
+	position: absolute;
+	/* top: .2em; */
+}
+
+@media only screen and (max-width: 2000px) {
+    .footer__container {
+        border-top: 1px solid rgba(82, 82, 82, 0.5);
+        box-shadow: 2px 5px 5px 5px rgba(36, 36, 36, 0.5);
+        height: 8%;
+        color: white;
+        background-color: rgba(109, 109, 109, 0.493);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        align-items: center;
+        z-index: 1;
+    }
+}

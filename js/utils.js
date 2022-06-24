@@ -1,4 +1,17 @@
+const rematchFunc = () => {
 
+    let rematchBtn = document.createElement("span");
+    let footer = document.querySelector("body");
+    rematchBtn.innerHTML = "REMATCH";
+    rematchBtn.classList.add("rematch_btn");
+
+    footer.append(rematchBtn);
+
+    console.log("HELLO")
+    rematchBtn.addEventListener("click", () => {
+        reload()
+    })
+}
 
 // Collision
 const rectangularCollision = ({ rectangle1, rectangle2 }) => {
@@ -10,8 +23,11 @@ const rectangularCollision = ({ rectangle1, rectangle2 }) => {
     )
 }
 
+let timer = 60;
+let timerId;
 // determining the winner
 const determineWinner = ({ player, enemy, timerId }) => {
+    rematchFunc();
     clearTimeout(timerId);
     document.querySelector('#displayText').style.display = 'flex';
 
@@ -22,11 +38,18 @@ const determineWinner = ({ player, enemy, timerId }) => {
     } else if (enemy.health > player.health) {
         document.querySelector('#displayText').innerHTML = 'Player 2 Wins!';
     }
+
+    setTimeout(() => {
+        player.dead = true;
+        enemy.dead = true;
+    }, 100)
 }
 
 // Timer
-let timer = 60;
-let timerId;
+
+function reload() {
+    reload = location.reload();
+}
 
 const decreaseTimer = () => {
     if (timer > 0) {
@@ -35,7 +58,7 @@ const decreaseTimer = () => {
         document.querySelector('#timer').innerHTML = timer;
     }
 
-    if(timer === 0) {
+    if(enemy.health <= 0 || player.health <= 0 || timer === 0) {
         determineWinner({ player, enemy, timerId });
     }
 }

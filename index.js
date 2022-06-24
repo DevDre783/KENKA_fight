@@ -35,7 +35,7 @@ const shop = new Sprite({
 const player = new Fighter({
     position: {
       x: 350,
-      y: 640
+      y: 440
     },
     velocity: {
       x: 0,
@@ -91,7 +91,7 @@ const player = new Fighter({
 const enemy = new Fighter({
     position: {
         x: 1275,
-        y: 640
+        y: 440
     },
     velocity : {
         x: 0,
@@ -257,11 +257,6 @@ const animate = () => {
     // if enemy misses attack
     if(enemy.isAttacking && enemy.framesCurrent === 2) {
         enemy.isAttacking = false;
-    }
-
-    // End game based on health
-    if(enemy.health <= 0 || player.health <= 0) {
-        determineWinner({ player, enemy, timerId });
     }
 }
 

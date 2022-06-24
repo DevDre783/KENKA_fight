@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="./main.css">
     <title>KENKA</title>
 
     <style>
@@ -14,6 +15,7 @@
             padding: 0;
         }
         body {
+            /* position: relative; */
             background-image: url('https://i.pinimg.com/originals/55/4e/76/554e7627abd0f651255f66998db91c35.png');
             background-repeat: no-repeat;
             background-size: cover;
@@ -31,14 +33,17 @@
             /* text-decoration: underline; */
         }
         .title_japanese {
+            /* position: absolute; */
             color: white;
             font-size: 32pt;
+            margin-bottom: 10px;
         }
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!-- <div class="player1_container">
@@ -168,6 +173,14 @@
         <canvas></canvas>
     </div>
 
+    <div class='footer__container'>
+        <footer>
+            <div class="footer__content">
+                <a class="github__icon" target="_blank" rel="noreferrer" href='https://github.com/DevDre783'><i class="fa fa-github"></i></a>
+                <a class="linkedIn__icon" target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/andres-soca-23852aab/'><i class="fa fa-linkedin-square"></i></a>
+            </div>
+        </footer>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/classes.js"></script>
     <script src="js/utils.js"></script>
