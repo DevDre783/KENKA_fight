@@ -77,7 +77,7 @@
     transform: translateY(4px);
 }
 
-@media only screen and (max-width: 2360px) {
+@media only screen and (max-width: 2550px) {
     .footer__container {
         border-top: 1px solid rgba(82, 82, 82, 0.5);
         box-shadow: 2px 5px 5px 5px rgba(36, 36, 36, 0.5);
@@ -92,12 +92,12 @@
     }
 
     .game_view {
-        transform: scale(0.9);
+        transform: scale(0.8);
         margin-bottom: 2%;
     }
 
     .title_japanese {
-        margin-bottom: 0px;
+        margin-bottom: -15px;
     }
 
     h1 {
@@ -157,6 +157,6 @@
     }
 
     .title_japanese {
-        margin-bottom: -85px;
+        margin-bottom: -95px;
     }
 }
