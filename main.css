@@ -25,24 +25,116 @@ h1 {
     /* text-decoration: underline; */
 }
 
+.controls_container {
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.player1_container {
+    text-align: center;
+    transform: scale(1.62);
+    position: fixed;
+    background-image: url("https://art.pixilart.com/3a8a19a3fff549b.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 23.5%;
+    margin-left: 3.2%;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+.player1_header {
+    margin-top: -24%;
+    font-size: 9pt;
+    padding: 0;
+    margin-left: -11%;
+    text-align: left;
+    transform: scale(0.55);
+}
+
+.player1_header > h3 {
+    text-decoration: underline;
+    font-size: 10.5pt;
+    text-align: left;
+    margin-left: 7.5%;
+    margin-bottom: 18%;
+}
+
+.player1_movement {
+    text-align: left;
+}
+
+.player1_movement > h3 {
+    margin-top: 5%;
+}
+
+.player1_attack {
+    margin-top: 10%;
+    text-align: left;
+}
+
+.player2_container {
+    text-align: center;
+    transform: scale(1.45);
+    position: fixed;
+    background-image: url("https://art.pixilart.com/3a8a19a3fff549b.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 23%;
+    margin-left: 87%;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+.player2_header {
+    margin-top: -18.5%;
+    font-size: 9pt;
+    padding: 0;
+    margin-left: -10.5%;
+    text-align: center;
+    transform: scale(0.6);
+}
+
+.iconify {
+    font-size: 32pt;
+    color: black;
+}
+
+.player2_header > h3 {
+    text-decoration: underline;
+    font-size: 11.5pt;
+    text-align: left;
+    margin-left: 7.5%;
+    margin-bottom: 15%;
+}
+
+.player2_movement {
+    text-align: left;
+}
+
+.player2_movement > h3 {
+    margin-top: 4%;
+}
+
+.player2_attack {
+    margin-top: 10%;
+    margin-bottom: 3.5%;
+    text-align: left;
+}
+
+.player2_attack > h3 {
+    margin-top: 6.5;
+}
+
 .title_japanese {
     /* position: absolute; */
     color: white;
     font-size: 32pt;
     margin-bottom: 10px;
-}
-
-.footer__container {
-    border-top: 1px solid rgba(82, 82, 82, 0.5);
-    box-shadow: 2px 5px 5px 5px rgba(36, 36, 36, 0.5);
-    height: 6%;
-    color: white;
-    background-color: rgba(109, 109, 109, 0.493);
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    align-items: center;
-    z-index: 1;
 }
 
 .footer__content {
@@ -111,7 +203,36 @@ h1 {
     transform: translateY(4px);
 }
 
+
+
+
 @media only screen and (max-width: 2550px) {
+    .player1_container {
+        text-align: center;
+        transform: scale(1.53);
+        position: fixed;
+        background-image: url("https://art.pixilart.com/3a8a19a3fff549b.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 23%;
+        margin-left: 7.8%;
+        font-family: 'Press Start 2P', cursive;
+        color: white;
+    }
+
+    .player2_container {
+        text-align: center;
+        transform: scale(1.35);
+        position: fixed;
+        background-image: url("https://art.pixilart.com/3a8a19a3fff549b.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 23%;
+        margin-left: 84.2%;
+        font-family: 'Press Start 2P', cursive;
+        color: white;
+    }
+
     .footer__container {
         border-top: 1px solid rgba(82, 82, 82, 0.5);
         box-shadow: 2px 5px 5px 5px rgba(36, 36, 36, 0.5);
@@ -156,32 +277,24 @@ h1 {
     }
 }
 
-/* @media only screen and (max-width: 2250px) {
-    .footer__container {
-        border-top: 1px solid rgba(82, 82, 82, 0.5);
-        box-shadow: 2px 5px 5px 5px rgba(36, 36, 36, 0.5);
-        height: 6%;
-        color: white;
-        background-color: rgba(109, 109, 109, 0.493);
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        align-items: center;
-        z-index: 1;
-        overflow: hidden;
-    }
 
-    .game_view {
-        transform: scale(0.85);
-        margin-bottom: -3.5%;
-    }
 
-    .title_japanese {
-        margin-bottom: -15px;
-    }
-} */
+
 
 @media only screen and (max-width: 2350px) {
+    .player1_container {
+        text-align: center;
+        transform: scale(1.53);
+        position: fixed;
+        background-image: url("https://art.pixilart.com/3a8a19a3fff549b.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 23%;
+        margin-left: 4.8%;
+        font-family: 'Press Start 2P', cursive;
+        color: white;
+    }
+
     .footer__container {
         border-top: 1px solid rgba(82, 82, 82, 0.5);
         box-shadow: 2px 5px 5px 5px rgba(36, 36, 36, 0.5);
